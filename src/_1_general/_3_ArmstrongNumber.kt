@@ -40,8 +40,8 @@ fun isArmstrongNumber(inputNumber: Int): Boolean {
     var sum = 0
 
     while (number > 0) {
-        val digit = number % 10
-        sum += digit.toDouble().pow(numberOfDigits.toDouble()).toInt()
+        val reminder = number % 10
+        sum += reminder.toDouble().pow(numberOfDigits.toDouble()).toInt()
         number /= 10
     }
     return sum == inputNumber
