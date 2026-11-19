@@ -12,7 +12,7 @@ fun main() {
     val myArray3 = arrayOf<String>("A", "B", "C", "D", "E")
 
     //Array of heterogeneous objects
-    var myArray4 = arrayOf(1, 10, 4, "A", "B")
+    var myArray4 = arrayOf<Any>(1, 10, 4, "A", "B")
 
     // Empty array declaration with size
     var myArray5 = arrayOfNulls<Int>(10)
