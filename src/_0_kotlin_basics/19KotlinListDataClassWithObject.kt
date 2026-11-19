@@ -1,21 +1,33 @@
 package _0_kotlin_basics
 
-data class Developer(val language: String, val year: String) {
+/**
+ * 19KotlinListDataClassWithObject.kt
+ * Demonstrates combining `data class` collections with Kotlin `object` (Singleton Pattern).
+ *
+ * Key Concepts:
+ * 1. `object` declaration: Defines a thread-safe Singleton instance in Kotlin.
+ * 2. Storing objects: Managing collections of data classes inside a Singleton object.
+ */
 
-}
+data class Developer(val language: String, val experienceYears: String)
 
 object SoftwareDeveloper {
-    var developerList = arrayListOf<Developer>()
+    val developerList = arrayListOf<Developer>()
+
     fun showData() {
-        for (i in developerList) {
-            println(i)
+        println("Developer Roster:")
+        for (dev in developerList) {
+            println(" -> Language: ${dev.language}, Experience: ${dev.experienceYears} year(s)")
         }
     }
 }
 
 fun main() {
-    SoftwareDeveloper.developerList.add(Developer("Java", "1"))
-    SoftwareDeveloper.developerList.add(Developer("Android", "1"))
-    SoftwareDeveloper.developerList.add(Developer("Kotlin", "1"))
+    println("--- Data Class & Singleton Object ---")
+
+    SoftwareDeveloper.developerList.add(Developer("Java", "5"))
+    SoftwareDeveloper.developerList.add(Developer("Android", "3"))
+    SoftwareDeveloper.developerList.add(Developer("Kotlin", "4"))
+
     SoftwareDeveloper.showData()
 }

@@ -1,21 +1,29 @@
 package _0_kotlin_basics
 
-class Animal(inputName: String) //primary Constructor
+/**
+ * Animal.kt
+ * Demonstrates Primary Constructors, `init` Blocks, and Secondary Constructors in Kotlin.
+ *
+ * Key Concepts:
+ * 1. Primary Constructor: Header signature `class Animal(inputName: String)`.
+ * 2. `init` Block: Executes immediately after the primary constructor.
+ * 3. Secondary Constructor: Declared with `constructor(...)`, must delegate to the primary constructor using `: this(...)`.
+ */
+class Animal(inputName: String) {
 
-//class Animal(inputName:String="Cat") //default Constructor
+    var name: String? = inputName
 
-{
-    //get call after primary Constructor
-    //Used for some initialization
+    // Init block runs right after primary constructor instantiation
     init {
-        println("Init block")
+        println("Animal init block executed for: $inputName")
     }
 
-    //Secondary constructor
-    constructor(age: Int, name: String) : this(name)
+    // Secondary constructor delegating to primary constructor `: this(name)`
+    constructor(age: Int, name: String) : this(name) {
+        println("Secondary constructor called with age: $age and name: $name")
+    }
 
-    var name: String? = inputName;
     fun showName() {
-        print(name)
+        println("Animal Name: $name")
     }
 }
