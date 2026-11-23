@@ -1,4 +1,4 @@
-package _4_arrays
+package _2_arrays
 
 fun main() {
     val numberToRemove = 4

@@ -1,4 +1,4 @@
-package _4_arrays
+package _2_arrays
 
 fun main() {
     val inputArray = arrayOf(1, 0, 1, 0, 0, 1, 0, 1, 0)
@@ -19,7 +19,7 @@ private fun sortArrayUsingPointers(inputArray: Array<Int>): Array<Int> {
         } else if (inputArray[end] == 1) {
             end--
         } else {
-            var temp = inputArray[start]
+            val temp = inputArray[start]
             inputArray[start] = inputArray[end]
             inputArray[end] = temp
             start++

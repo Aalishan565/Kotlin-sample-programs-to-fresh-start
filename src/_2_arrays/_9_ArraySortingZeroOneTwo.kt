@@ -1,4 +1,4 @@
-package _4_arrays
+package _2_arrays
 
 fun main() {
     val inputArray = arrayOf(1, 2, 0, 1, 0, 2, 0, 1, 2, 0, 1, 2, 0)
@@ -15,7 +15,7 @@ private fun sortArrayUsingDutchNationalFlagApproach(inputArray: Array<Int>): Arr
         when (inputArray[mid]) {
             0 -> {
                 if (inputArray[mid] != inputArray[firstPointer]) {
-                    var temp = inputArray[mid]
+                    val temp = inputArray[mid]
                     inputArray[mid] = inputArray[firstPointer]
                     inputArray[firstPointer] = temp
                 }
@@ -29,7 +29,7 @@ private fun sortArrayUsingDutchNationalFlagApproach(inputArray: Array<Int>): Arr
 
             2 -> {
                 if (inputArray[mid] != inputArray[lastPointer]) {
-                    var temp = inputArray[mid]
+                    val temp = inputArray[mid]
                     inputArray[mid] = inputArray[lastPointer]
                     inputArray[lastPointer] = temp
                 }

@@ -1,4 +1,4 @@
-package _4_arrays
+package _2_arrays
 
 fun main() {
     val inputArray = arrayOf(1, 0, 1, 0, 0, 1, 0, 1, 0)
@@ -8,16 +8,17 @@ fun main() {
 }
 
 private fun moveAllZerosToEnd(inputArray: Array<Int>): Array<Int> {
-    var j = inputArray.size - 1
-    for (i in inputArray.size - 1 downTo 0) {
+    var j = 0
+    for (i in inputArray.indices) {
         if (inputArray[i] != 0 && inputArray[j] == 0) {
-            var temp = inputArray[j]
-            inputArray[j] = inputArray[i]
-            inputArray[i] = temp
+            val temp = inputArray[i]
+            inputArray[i] = inputArray[j]
+            inputArray[j] = temp
         }
         if (inputArray[j] != 0) {
-            j--
+            j++
         }
     }
     return inputArray
+
 }
