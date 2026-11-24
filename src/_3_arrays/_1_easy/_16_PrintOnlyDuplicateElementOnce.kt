@@ -5,8 +5,12 @@ package _3_arrays._1_easy
  * Finds and prints only duplicate elements from an array exactly ONCE,
  * even if a duplicate element appears 3 or more times.
  *
- * Examples:
- *   - Input: [1, 2, 3, 2, 4, 3, 5, 2, 1, 6] -> Duplicates: [1, 2, 3]
+ * Beginner Explanation:
+ * Use a `seen` set to track seen numbers.
+ * When `!seen.add(num)` is true (number already seen), add it to `duplicates` set.
+ *
+ * Time Complexity: O(N)
+ * Space Complexity: O(N)
  */
 fun main() {
     val testArrays = listOf(
@@ -26,13 +30,9 @@ fun main() {
     }
 }
 
-/**
- * Approach 1: Using Two Sets (Optimal: O(N) Time, O(N) Space)
- * Uses a `seen` set to track numbers and a `duplicates` set to store duplicates once.
- */
 fun findDuplicatesHashSet(array: IntArray): Set<Int> {
     val seen = HashSet<Int>()
-    val duplicates = LinkedHashSet<Int>() // Preserves insertion order
+    val duplicates = LinkedHashSet<Int>()
 
     for (num in array) {
         if (!seen.add(num)) {
@@ -43,10 +43,6 @@ fun findDuplicatesHashSet(array: IntArray): Set<Int> {
     return duplicates
 }
 
-/**
- * Approach 2: Sorting Approach (O(N log N) Time, O(1) Extra Space)
- * Sorts the array first and checks adjacent elements.
- */
 fun findDuplicatesSorting(array: IntArray): List<Int> {
     if (array.size < 2) return emptyList()
 

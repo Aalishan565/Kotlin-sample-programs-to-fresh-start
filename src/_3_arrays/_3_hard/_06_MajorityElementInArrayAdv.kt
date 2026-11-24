@@ -3,6 +3,12 @@ package _3_arrays._3_hard
 /**
  * _06_MajorityElementInArrayAdv.kt
  * Finds majority element (> N/2 occurrences) using Boyer-Moore Voting Algorithm.
+ *
+ * Beginner Explanation:
+ * Single-pass candidate selection with cancellation, followed by verification count.
+ *
+ * Time Complexity: O(N)
+ * Space Complexity: O(1)
  */
 fun main() {
     val nums = intArrayOf(3, 3, 4, 2, 4, 4, 2, 4, 4)

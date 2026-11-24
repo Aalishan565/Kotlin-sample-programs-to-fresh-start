@@ -2,7 +2,10 @@ package _3_arrays._2_medium
 
 /**
  * _13_FirstNegativeNumberInEveryWindowKSize.kt
- * Finds the first negative integer in every contiguous sliding window of size K.
+ * Finds the first negative integer in every contiguous sliding window of size K using ArrayDeque Queue.
+ *
+ * Time Complexity: O(N)
+ * Space Complexity: O(K)
  */
 fun main() {
     val array = intArrayOf(10, -3, 10, -2, -1, 3, 2, 4, 5, 6)

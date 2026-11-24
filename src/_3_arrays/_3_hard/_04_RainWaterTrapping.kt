@@ -6,6 +6,14 @@ import kotlin.math.min
 /**
  * _04_RainWaterTrapping.kt
  * Trapping Rain Water problem (LeetCode #42).
+ *
+ * Beginner Explanation:
+ * Water trapped above bar `i` is determined by:
+ * `water = min(max_height_left, max_height_right) - height[i]`.
+ * Compute `leftMax` array from left to right, and `rightMax` array from right to left.
+ *
+ * Time Complexity: O(N)
+ * Space Complexity: O(N)
  */
 fun main() {
     val heights = intArrayOf(3, 1, 2, 4, 0, 1, 3, 2)

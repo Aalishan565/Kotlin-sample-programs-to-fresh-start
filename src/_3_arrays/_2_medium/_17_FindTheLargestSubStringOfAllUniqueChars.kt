@@ -3,6 +3,9 @@ package _3_arrays._2_medium
 /**
  * _17_FindTheLargestSubStringOfAllUniqueChars.kt
  * Finds the length and content of the longest substring with all unique characters (no duplicate characters).
+ *
+ * Time Complexity: O(N)
+ * Space Complexity: O(N)
  */
 fun main() {
     val str1 = "abccdd"

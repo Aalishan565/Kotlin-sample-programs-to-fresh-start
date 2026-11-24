@@ -3,6 +3,13 @@ package _3_arrays._2_medium
 /**
  * _14_ContinuesSubArrayToFindGivenSum.kt
  * Finds a contiguous subarray whose elements add up to a given target sum.
+ *
+ * Beginner Explanation:
+ * - Two Pointers / Sliding Window: Expand right pointer to add, shrink left pointer when sum > target.
+ * - Prefix Sum + Map: Handles negative numbers using running prefix sum lookup.
+ *
+ * Time Complexity: O(N)
+ * Space Complexity: O(1) for Sliding Window, O(N) for Prefix Sum Map
  */
 fun main() {
     val array1 = intArrayOf(1, 4, 20, 3, 10, 5)

@@ -2,7 +2,16 @@ package _3_arrays._2_medium
 
 /**
  * _11_MajorityElementInArray.kt
- * Finds the Majority Element in an array (> N/2 occurrences).
+ * Finds the Majority Element in an array (> N/2 occurrences) using Boyer-Moore Voting Algorithm.
+ *
+ * Beginner Explanation:
+ * - Boyer-Moore Voting Algorithm cancels out opposing elements.
+ * - Maintain a `candidate` and `count`.
+ * - If `count == 0`, pick current element as `candidate`.
+ * - If current == candidate, `count++`, else `count--`.
+ *
+ * Time Complexity: O(N)
+ * Space Complexity: O(1)
  */
 fun main() {
     val testArrays = listOf(

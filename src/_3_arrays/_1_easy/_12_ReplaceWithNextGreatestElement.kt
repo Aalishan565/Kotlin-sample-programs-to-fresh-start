@@ -3,6 +3,12 @@ package _3_arrays._1_easy
 /**
  * _12_ReplaceWithNextGreatestElement.kt
  * Replaces each element in an array with the greatest element on its right side.
+ *
+ * Beginner Explanation:
+ * Iterate backwards from right to left while keeping track of `maxFromRight`.
+ *
+ * Time Complexity: O(N)
+ * Space Complexity: O(1)
  */
 fun main() {
     val array = intArrayOf(2, 1, 2, 1, 0, 4, 1, 0, 1, 2)

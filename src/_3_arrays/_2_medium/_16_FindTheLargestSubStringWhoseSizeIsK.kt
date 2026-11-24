@@ -3,6 +3,9 @@ package _3_arrays._2_medium
 /**
  * _16_FindTheLargestSubStringWhoseSizeIsK.kt
  * Finds the largest substring containing exactly K unique characters.
+ *
+ * Time Complexity: O(N)
+ * Space Complexity: O(K)
  */
 fun main() {
     val str1 = "aabacbebebexyz123"

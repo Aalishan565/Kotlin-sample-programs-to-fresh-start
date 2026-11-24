@@ -2,7 +2,15 @@ package _3_arrays._1_easy
 
 /**
  * _09_FirstAndLastOccurrenceOfElementInUnSortedArray.kt
- * Finds the first and last occurrence index of a target element in an unsorted array.
+ * Finds the first and last index of a target element in an unsorted array.
+ *
+ * Beginner Explanation:
+ * Iterate through the array with index tracking:
+ * - Update `first` only on the very first match.
+ * - Update `last` on every match.
+ *
+ * Time Complexity: O(N)
+ * Space Complexity: O(1)
  */
 fun main() {
     val array = intArrayOf(1, 2, 2, 2, 2, 6, 7, 8, 9, 10)

@@ -5,7 +5,14 @@ import java.util.PriorityQueue
 
 /**
  * _02_MaxNumberOfSubArrayOfSizeK.kt
- * Finds the maximum element in every contiguous subarray of fixed size K (Sliding Window Maximum - LeetCode #239).
+ * Finds the maximum element in every contiguous sliding window of fixed size K (LeetCode #239).
+ *
+ * Beginner Explanation:
+ * Maintains a Max-Heap / PriorityQueue storing elements in current window of size K.
+ * `maxHeap.peek()` yields the maximum element for each sliding window.
+ *
+ * Time Complexity: O(N log K)
+ * Space Complexity: O(K)
  */
 fun main() {
     val array = intArrayOf(1, 3, -1, 4, 0, 5, -4, 9, 8)

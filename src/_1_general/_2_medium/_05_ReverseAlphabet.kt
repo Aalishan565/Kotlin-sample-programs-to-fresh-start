@@ -1,26 +1,29 @@
-package _1_general
+package _1_general._2_medium
 
 /**
- * _2_ReverseAlphabet.kt
- * Reverses only alphabetic letters in a string while keeping all special characters in their original positions.
+ * _05_ReverseAlphabet.kt
+ * Reverses only alphabetic letters in a string while preserving special character positions.
+ *
  * Example:
  *   Input:  "ab#,oQ,a@b"
  *   Output: "ba#,Qo,b@a"
+ *
+ * Time Complexity: O(N)
+ * Space Complexity: O(N)
  */
 fun main() {
     val input = "ab#,oQ,a@b"
-    println("Original String:    $input")
-    println(" Two-Pointer Way:  ${reverseAlphabetTwoPointer(input)}")
+
+    println("--- Reverse Alphabets Only ---")
+    println("Original String: $input")
+    println("Reversed String: ${reverseAlphabetTwoPointer(input)}")
 }
 
-/**
- *Two-Pointer Approach (Most Efficient: O(N) time, single pass)
- * - Uses left and right pointers moving inward to swap letters in-place.
- */
-private fun reverseAlphabetTwoPointer(input: String): String {
+fun reverseAlphabetTwoPointer(input: String): String {
     val inputCharArray = input.toCharArray()
     var startIndex = 0
     var endIndex = inputCharArray.size - 1
+
     while (startIndex < endIndex) {
         if (!inputCharArray[startIndex].isLetter()) {
             startIndex++

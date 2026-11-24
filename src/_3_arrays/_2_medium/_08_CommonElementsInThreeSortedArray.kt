@@ -2,7 +2,15 @@ package _3_arrays._2_medium
 
 /**
  * _08_CommonElementsInThreeSortedArray.kt
- * Finds common elements across three sorted arrays in O(N1 + N2 + N3) time.
+ * Finds common elements across three sorted arrays using three pointers.
+ *
+ * Beginner Explanation:
+ * Compares current elements at pointers `i`, `j`, `k`:
+ * - If `a[i] == b[j] == c[k]`: common element found! Increment all 3 pointers.
+ * - Otherwise: increment pointer with the smallest current element.
+ *
+ * Time Complexity: O(N1 + N2 + N3)
+ * Space Complexity: O(1) Auxiliary Space
  */
 fun main() {
     val array1 = intArrayOf(1, 3, 3, 5, 8, 9)

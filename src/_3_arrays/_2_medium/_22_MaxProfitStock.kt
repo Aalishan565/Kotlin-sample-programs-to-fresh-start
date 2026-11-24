@@ -6,6 +6,13 @@ import kotlin.math.min
 /**
  * _22_MaxProfitStock.kt
  * Best Time to Buy and Sell Stock (Single transaction & Multiple transactions - LeetCode #121 & #122).
+ *
+ * Beginner Explanation:
+ * - Single Transaction: Track minimum buying price so far and maximum profit if sold today.
+ * - Multiple Transactions: Sum all positive price increases (`prices[i] - prices[i-1]`).
+ *
+ * Time Complexity: O(N)
+ * Space Complexity: O(1)
  */
 fun main() {
     val stockPrices = intArrayOf(5, 2, 6, 1, 4)

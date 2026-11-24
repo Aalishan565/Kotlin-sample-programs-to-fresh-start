@@ -4,11 +4,14 @@ package _3_arrays._1_easy
  * _03_SecondLargestInArray.kt
  * Finds the second largest distinct element in an array of integers.
  *
- * Examples:
- *   - [11, 3, 2, 5, 4, 9, 7, 8, 6, 10] -> 10
- *   - [10, 10, 10]                      -> null (no distinct second largest)
- *   - [-10, -5, -2, -8]                 -> -5
- *   - [5]                               -> null (fewer than 2 elements)
+ * Beginner Explanation:
+ * - We track two variables: `largest` and `secondLargest`.
+ * - For every number:
+ *   - If number > largest: current largest becomes secondLargest, and number becomes new largest.
+ *   - Else if number < largest AND number > secondLargest: number becomes new secondLargest.
+ *
+ * Time Complexity: O(N) - Single pass loop.
+ * Space Complexity: O(1) - Constant auxiliary space.
  */
 fun main() {
     val testArrays = listOf(
@@ -22,20 +25,15 @@ fun main() {
     for (arr in testArrays) {
         val resultOpt = findSecondLargest(arr)
         val resultKotlin = findSecondLargestFunctional(arr)
-        println(
-            "Array: ${
-                arr.joinToString(", ").padStart(32)
-            } -> Second Largest (O(N)): $resultOpt | (Functional): $resultKotlin"
-        )
+        println("Array: ${arr.joinToString(", ").padStart(32)} -> Second Largest: $resultOpt | (Functional): $resultKotlin")
     }
 }
 
 /**
- * Approach 1: Single-Pass Optimal Algorithm (O(N) Time, O(1) Space)
- * Keeps track of `largest` and `secondLargest` in a single loop.
- * Returns null if no distinct second largest element exists.
+ * Single-Pass Optimal Algorithm (O(N) Time, O(1) Space)
  */
 fun findSecondLargest(array: IntArray): Int? {
+    // Need at least 2 elements to have a second largest
     if (array.size < 2) return null
 
     var largest: Int? = null
@@ -43,9 +41,11 @@ fun findSecondLargest(array: IntArray): Int? {
 
     for (num in array) {
         if (largest == null || num > largest) {
+            // New largest found; old largest shifts to secondLargest
             secondLargest = largest
             largest = num
         } else if (num != largest && (secondLargest == null || num > secondLargest)) {
+            // Number is smaller than largest but greater than current secondLargest
             secondLargest = num
         }
     }
@@ -53,8 +53,7 @@ fun findSecondLargest(array: IntArray): Int? {
 }
 
 /**
- * Approach 2: Idiomatic Kotlin Way (Short & Readable)
- * Filters distinct elements, sorts in descending order, and gets element at index 1.
+ * Idiomatic Kotlin Way
  */
 fun findSecondLargestFunctional(array: IntArray): Int? {
     return array.distinct().sortedDescending().getOrNull(1)

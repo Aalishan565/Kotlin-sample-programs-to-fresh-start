@@ -1,19 +1,15 @@
-package _1_general
+package _1_general._1_easy
 
 /**
- * _5_ReverseInteger.kt
- * Reverses the digits of a 32-bit signed integer.
+ * _05_ReverseInteger.kt
+ * Reverses the digits of a 32-bit signed integer (LeetCode #7).
  *
  * Edge Cases Handled:
  * 1. Negative numbers: e.g., -123 becomes -321.
- * 2. Trailing zeros: e.g., 120 becomes 21.
- * 3. 32-bit Integer Overflow: If reversing the integer causes overflow beyond [Int.MIN_VALUE, Int.MAX_VALUE], return 0.
+ * 2. 32-bit Integer Overflow: Returns 0 if reversed integer exceeds [Int.MIN_VALUE, Int.MAX_VALUE].
  *
- * Examples:
- *   - Input: 123        -> Output: 321
- *   - Input: -123       -> Output: -321
- *   - Input: 120        -> Output: 21
- *   - Input: 1534236469 -> Output: 0 (Overflows 32-bit Int)
+ * Time Complexity: O(log10 N)
+ * Space Complexity: O(1)
  */
 fun main() {
     val testNumbers = listOf(123, -123, 120, 1534236469)
@@ -29,11 +25,6 @@ fun main() {
     }
 }
 
-/**
- * Approach 1: Mathematical Loop (O(log10 N) Time, O(1) Space)
- * Uses `number != 0` so it works for both positive and negative numbers.
- * Accumulates result into a 64-bit `Long` to detect 32-bit `Int` overflow cleanly.
- */
 fun reverseInteger(input: Int): Int {
     var number = input
     var reversedNumber = 0L
@@ -43,9 +34,10 @@ fun reverseInteger(input: Int): Int {
         reversedNumber = (reversedNumber * 10) + reminder
         number /= 10
     }
-    // Return 0 if the reversed number overflows 32-bit signed Int range
+
     if (reversedNumber < Int.MIN_VALUE || reversedNumber > Int.MAX_VALUE) {
         return 0
     }
+
     return reversedNumber.toInt()
 }

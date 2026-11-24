@@ -2,7 +2,15 @@ package _3_arrays._2_medium
 
 /**
  * _01_PairOfNumbersOfGivenSum.kt
- * Finds pairs of numbers in an array that add up to a target sum (Two Sum).
+ * Finds pairs of numbers in an array that add up to a target sum (Two Sum - LeetCode #1).
+ *
+ * Beginner Explanation:
+ * - HashMap Approach: For each number `x`, check if `target - x` exists in the map.
+ * - Two-Pointer Approach (for sorted array): Use `left` and `right` pointers moving inward based on comparison with target.
+ *
+ * Time Complexity:
+ * - HashMap: O(N) Time, O(N) Space
+ * - Two Pointers: O(N) Time, O(1) Space (if sorted)
  */
 fun main() {
     val array = intArrayOf(1, 2, 3, 4, 5, 7, 8, 9)

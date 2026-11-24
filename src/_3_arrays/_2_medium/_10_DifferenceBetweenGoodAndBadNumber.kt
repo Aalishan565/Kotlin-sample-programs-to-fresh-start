@@ -3,6 +3,9 @@ package _3_arrays._2_medium
 /**
  * _10_DifferenceBetweenGoodAndBadNumber.kt
  * Calculates difference between sum of "good" (matching) and "bad" (mismatched) elements after sorting.
+ *
+ * Time Complexity: O(N log N) due to sorting
+ * Space Complexity: O(N)
  */
 fun main() {
     val array = intArrayOf(0, 4, 0, 0, 1, 3, 4, 1, 0, 2)

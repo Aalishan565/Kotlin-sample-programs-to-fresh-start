@@ -3,6 +3,13 @@ package _3_arrays._2_medium
 /**
  * _07_MergeTwoSortedArray.kt
  * Merges two sorted arrays into a single sorted array in O(N + M) time.
+ *
+ * Beginner Explanation:
+ * Maintains two pointers (`left` and `right`) comparing current elements from both sorted input arrays
+ * and copies the smaller element into the merged array.
+ *
+ * Time Complexity: O(N + M)
+ * Space Complexity: O(N + M)
  */
 fun main() {
     val array1 = intArrayOf(1, 2, 3, 4, 5, 6)

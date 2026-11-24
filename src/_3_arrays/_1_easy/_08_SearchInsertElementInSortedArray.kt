@@ -2,7 +2,14 @@ package _3_arrays._1_easy
 
 /**
  * _08_SearchInsertElementInSortedArray.kt
- * Finds the index of a target element in a sorted array, or the index where it would be inserted (LeetCode #35).
+ * Finds the index of a target element in a sorted array using Binary Search,
+ * or returns index where it should be inserted (LeetCode #35).
+ *
+ * Beginner Explanation:
+ * Uses Binary Search O(log N) to repeatedly divide search space in half.
+ *
+ * Time Complexity: O(log N)
+ * Space Complexity: O(1)
  */
 fun main() {
     val array = intArrayOf(1, 2, 3, 5)
@@ -28,5 +35,6 @@ fun searchInsertPosition(array: IntArray, target: Int): Int {
             else -> high = mid - 1
         }
     }
+    // `low` represents the correct insertion index when not found
     return low
 }

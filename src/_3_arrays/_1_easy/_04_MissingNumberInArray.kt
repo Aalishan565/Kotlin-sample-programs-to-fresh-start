@@ -4,9 +4,13 @@ package _3_arrays._1_easy
  * _04_MissingNumberInArray.kt
  * Demonstrates finding missing and duplicate numbers in integer arrays.
  *
- * Problems Covered:
- * 1. Find Single Missing Number in range [1, N] (Distinct elements).
- * 2. Find Duplicate and Missing Number in range [1, N] (Contains 1 repeated & 1 missing).
+ * Beginner Explanation:
+ * - Gauss Formula: Total sum of numbers from 1 to N is `N * (N + 1) / 2`.
+ *   Subtracting actual array sum gives the missing number.
+ * - Bitwise XOR: `X ^ X = 0` and `X ^ 0 = X`. XORing 1..N with array elements cancels duplicates, leaving missing number.
+ *
+ * Time Complexity: O(N)
+ * Space Complexity: O(1)
  */
 fun main() {
     println("--- 1. Single Missing Number (Distinct Elements) ---")
@@ -16,17 +20,11 @@ fun main() {
     println("Missing Number (XOR Method) : ${findMissingNumberXor(distinctArray)}")
 
     println("\n--- 2. Duplicate & Missing Number ---")
-    val arrayWithDuplicate =
-        intArrayOf(1, 2, 3, 4, 5, 6, 6, 7, 8, 8, 10) // Size 10, duplicate 8, missing 9
+    val arrayWithDuplicate = intArrayOf(1, 2, 3, 4, 5, 6, 6, 7, 8, 8, 10)
     println("Array: ${arrayWithDuplicate.joinToString(", ")}")
     missingNumberWithRepeatedElement(arrayWithDuplicate)
 }
 
-/**
- * Problem 1 (Approach A): Gauss Sum Formula O(N) Time, O(1) Space
- * Sum of numbers 1 to N is: N * (N + 1) / 2
- * Missing = ExpectedSum - ActualSum
- */
 fun findMissingNumberSumFormula(array: IntArray): Int {
     val n = array.size + 1
     val expectedSum = (n * (n + 1)) / 2
@@ -34,21 +32,16 @@ fun findMissingNumberSumFormula(array: IntArray): Int {
     return expectedSum - actualSum
 }
 
-/**
- * Problem 1 (Approach B): Bitwise XOR O(N) Time, O(1) Space
- * Property: X ^ X = 0, X ^ 0 = X
- * Avoids potential integer overflow from large sums.
- */
 fun findMissingNumberXor(array: IntArray): Int {
     val n = array.size + 1
     var xorAll = 0
 
-    // XOR all numbers from 1 to N
+    // XOR numbers 1 to N
     for (i in 1..n) {
         xorAll = xorAll xor i
     }
 
-    // XOR all elements in the array
+    // XOR array elements
     for (num in array) {
         xorAll = xorAll xor num
     }
@@ -56,26 +49,21 @@ fun findMissingNumberXor(array: IntArray): Int {
     return xorAll
 }
 
-/**
- * Problem 2: Find Duplicate and Missing Number
- * Finds the repeated element and missing element in range 1..N.
- * Uses HashMap/Frequency set O(N) Time, O(N) Space.
- */
 private fun missingNumberWithRepeatedElement(inputArray: IntArray) {
     val numberMap: HashMap<Int, Boolean> = HashMap()
     val totalNumbers = inputArray.size
+
     inputArray.forEach { number ->
         if (numberMap[number] == null) {
             numberMap[number] = true
         } else {
-            println("$number is duplicate")
+            println("Duplicate number found: $number")
         }
     }
 
     for (i in 1..<totalNumbers) {
         if (numberMap[i] == null) {
-            println("$i is missing number")
+            println("Missing number found  : $i")
         }
     }
-
 }

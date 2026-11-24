@@ -3,6 +3,12 @@ package _3_arrays._2_medium
 /**
  * _15_FindTheLargestSubArrayWhoseSumIsK.kt
  * Finds the length and indices of the largest contiguous subarray whose elements sum up to K.
+ *
+ * Beginner Explanation:
+ * Variable size sliding window: expand `end` to increase sum, shrink `start` when `sum > K`.
+ *
+ * Time Complexity: O(N)
+ * Space Complexity: O(1)
  */
 fun main() {
     val array1 = intArrayOf(4, 1, 1, 1, 3, 5)

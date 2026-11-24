@@ -1,7 +1,7 @@
-package _1_general
+package _1_general._1_easy
 
 /**
- * _11_SwapTwoNumbers.kt
+ * _02_SwapTwoNumbers.kt
  * Demonstrates various methods to swap two numbers in Kotlin.
  *
  * Approaches:
@@ -9,6 +9,9 @@ package _1_general
  * 2. Without Third Variable using Arithmetic (Addition & Subtraction).
  * 3. Without Third Variable using Bitwise XOR (`xor`).
  * 4. Idiomatic Kotlin syntax using `.also`.
+ *
+ * Time Complexity: O(1)
+ * Space Complexity: O(1)
  */
 fun main() {
     val a = 10
@@ -29,10 +32,6 @@ fun main() {
     swapIdiomaticKotlin(a, b)
 }
 
-/**
- * Method 1: Using Temporary Variable
- * Simple, clean, and avoids integer overflow risks.
- */
 fun swapWithTempVariable(inputA: Int, inputB: Int) {
     var num1 = inputA
     var num2 = inputB
@@ -42,48 +41,27 @@ fun swapWithTempVariable(inputA: Int, inputB: Int) {
     println("Swapped: a = $num1, b = $num2")
 }
 
-/**
- * Method 2: Without Third Variable using Arithmetic (+ and -)
- * Logic:
- *   num1 = num1 + num2 (10 + 5 = 15)
- *   num2 = num1 - num2 (15 - 5 = 10)
- *   num1 = num1 - num2 (15 - 10 = 5)
- */
 fun swapWithoutThirdVariable(inputA: Int, inputB: Int) {
     var num1 = inputA
     var num2 = inputB
     num1 += num2
     num2 = num1 - num2
     num1 -= num2
-
     println("Swapped: a = $num1, b = $num2")
 }
 
-/**
- * Method 3: Without Third Variable using Bitwise XOR (`xor`)
- * Logic:
- *   x ^ x = 0, x ^ 0 = x
- */
 fun swapUsingXor(inputA: Int, inputB: Int) {
     var num1 = inputA
     var num2 = inputB
-
     num1 = num1 xor num2
     num2 = num1 xor num2
     num1 = num1 xor num2
-
     println("Swapped: a = $num1, b = $num2")
 }
 
-/**
- * Method 4: Idiomatic Kotlin Way (`.also`)
- * Swaps two variables in a single expression.
- */
 fun swapIdiomaticKotlin(inputA: Int, inputB: Int) {
     var num1 = inputA
     var num2 = inputB
-
     num1 = num2.also { num2 = num1 }
-
     println("Swapped: a = $num1, b = $num2")
 }

@@ -4,6 +4,13 @@ package _3_arrays._2_medium
  * _02_SeparateEvenOddNumbersInArray.kt
  * Separates even and odd numbers in an integer array such that all EVEN numbers come first,
  * followed by all ODD numbers (Sort Array By Parity - LeetCode #905).
+ *
+ * Beginner Explanation:
+ * Two-pointer technique where `left` pointer finds odd numbers and `right` pointer finds even numbers,
+ * swapping them in-place.
+ *
+ * Time Complexity: O(N)
+ * Space Complexity: O(1)
  */
 fun main() {
     val testArrays = listOf(
@@ -22,9 +29,6 @@ fun main() {
     }
 }
 
-/**
- * Approach 1: Two-Pointer In-Place Swap (Optimal: O(N) Time, O(1) Space)
- */
 fun separateEvenOddTwoPointer(array: IntArray) {
     var left = 0
     var right = array.size - 1

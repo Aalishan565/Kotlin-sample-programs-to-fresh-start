@@ -2,7 +2,13 @@ package _3_arrays._1_easy
 
 /**
  * _15_IntersectionOfArrays.kt
- * Finds the intersection of two integer arrays.
+ * Finds the intersection of two integer arrays (elements common to both arrays).
+ *
+ * Beginner Explanation:
+ * Converts arrays to sets and uses set intersection `.intersect()` or HashSet lookup.
+ *
+ * Time Complexity: O(N + M)
+ * Space Complexity: O(N + M)
  */
 fun main() {
     val array1 = intArrayOf(1, 3, 3, 5, 7, 9)

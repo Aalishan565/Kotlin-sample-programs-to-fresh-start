@@ -5,6 +5,15 @@ import kotlin.math.max
 /**
  * _03_MaxPlatForms.kt
  * Finds the minimum number of railway platforms required for trains based on arrival and departure times.
+ *
+ * Beginner Explanation:
+ * Sort both arrival and departure arrays.
+ * Use two pointers `i` (arrival) and `j` (departure):
+ * - If arrival[i] < departure[j]: a train arrives before previous train leaves -> need new platform (`count++`, `i++`).
+ * - Else: train leaves -> free up platform (`count--`, `j++`).
+ *
+ * Time Complexity: O(N log N)
+ * Space Complexity: O(N)
  */
 fun main() {
     val arrival = intArrayOf(1, 3, 4, 7, 8)

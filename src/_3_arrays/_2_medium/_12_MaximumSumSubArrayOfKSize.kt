@@ -3,6 +3,13 @@ package _3_arrays._2_medium
 /**
  * _12_MaximumSumSubArrayOfKSize.kt
  * Finds the maximum sum of a contiguous subarray of fixed size K using Sliding Window.
+ *
+ * Beginner Explanation:
+ * Compute sum of first window of size K.
+ * Slide window 1 element right by adding incoming element and subtracting outgoing element.
+ *
+ * Time Complexity: O(N)
+ * Space Complexity: O(1)
  */
 fun main() {
     val array = intArrayOf(10, 10, 10, 1, 2, 3, 4, 5, 6)

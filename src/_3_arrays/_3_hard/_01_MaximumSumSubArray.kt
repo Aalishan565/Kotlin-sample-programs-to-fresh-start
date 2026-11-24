@@ -3,6 +3,17 @@ package _3_arrays._3_hard
 /**
  * _01_MaximumSumSubArray.kt
  * Finds the contiguous subarray with the largest sum using Kadane's Algorithm (LeetCode #53).
+ *
+ * Beginner Explanation:
+ * Kadane's Algorithm maintains a running sum (`maxSumSoFar`).
+ * At each element:
+ * - Add current element to `maxSumSoFar`.
+ * - If `maxSumSoFar` becomes negative (< 0), reset `maxSumSoFar = 0` and reset subarray start index
+ *   (since a negative prefix sum reduces any future subarray sum).
+ * - Keep track of `maxSum` and the corresponding start/end indices.
+ *
+ * Time Complexity: O(N)
+ * Space Complexity: O(1)
  */
 fun main() {
     val testArrays = listOf(

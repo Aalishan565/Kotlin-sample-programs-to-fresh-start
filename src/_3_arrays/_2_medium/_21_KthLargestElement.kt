@@ -4,7 +4,14 @@ import java.util.PriorityQueue
 
 /**
  * _21_KthLargestElement.kt
- * Finds the K-th largest element in an unsorted array using Min-Heap (LeetCode #215).
+ * Finds the K-th largest element in an unsorted array using a Min-Heap (LeetCode #215).
+ *
+ * Beginner Explanation:
+ * Maintain a Min-Heap of size K.
+ * If incoming element is larger than `minHeap.peek()`, pop minimum and insert larger element.
+ *
+ * Time Complexity: O(N log K)
+ * Space Complexity: O(K)
  */
 fun main() {
     val nums = intArrayOf(3, 2, 1, 5, 6, 7, 4)
